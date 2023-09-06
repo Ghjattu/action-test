@@ -31,7 +31,7 @@ jobs:
       uses: nnhy/mysql-action@v1.0
 
     - name: Create a database
-      run : mysql -u $MYSQL_USERNAME -p $MYSQL_PASSWORD -e "CREATE $MYSQL_DB_NAME;"
+      run : mysql -h $MYSQL_IP -u $MYSQL_USERNAME -p $MYSQL_PASSWORD -e "CREATE $MYSQL_DB_NAME;"
 
     - name: Build
       run: go build -v ./...
