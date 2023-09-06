@@ -26,3 +26,7 @@ func InitDatabase() {
 		panic("failed to connect database")
 	}
 }
+
+func main() {
+	InitDatabase()
+}
