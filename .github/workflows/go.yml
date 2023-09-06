@@ -17,7 +17,6 @@ jobs:
         MYSQL_IP: 127.0.0.1
         MYSQL_PORT: 3306
         MYSQL_USERNAME: root
-        MYSQL_PASSWORD: root
         MYSQL_DB_NAME: tiktok_test
     steps:
     - uses: actions/checkout@v3
