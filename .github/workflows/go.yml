@@ -13,6 +13,12 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    env:
+        MYSQL_IP: 127.0.0.1
+        MYSQL_PORT: 3306
+        MYSQL_USERNAME: root
+        MYSQL_PASSWORD: root
+        MYSQL_DB_NAME: test
     steps:
     - uses: actions/checkout@v3
 
@@ -24,14 +30,12 @@ jobs:
     - name: Setup MySql
       uses: nnhy/mysql-action@v1.0
 
+    - name: Create a database
+      run : mysql -u $MYSQL_USERNAME -p $MYSQL_PASSWORD -e "CREATE $MYSQL_DB_NAME;"
+
     - name: Build
       run: go build -v ./...
 
     - name: Test
       run: go test -v ./...
-      env:
-        MYSQL_IP: 127.0.0.1
-        MYSQL_PORT: 3306
-        MYSQL_USERNAME: root
-        MYSQL_PASSWORD: root
-        MYSQL_DB_NAME: test
+
