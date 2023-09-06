@@ -9,7 +9,7 @@ import (
 )
 
 func InitDatabase() {
-	godotenv.Load("../.env")
+	godotenv.Load("")
 
 	mysql_username := os.Getenv("MYSQL_USERNAME")
 	mysql_password := os.Getenv("MYSQL_PASSWORD")

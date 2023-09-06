@@ -18,7 +18,7 @@ jobs:
         MYSQL_PORT: 3306
         MYSQL_USERNAME: root
         MYSQL_PASSWORD: root
-        MYSQL_DB_NAME: test
+        MYSQL_DB_NAME: tiktok_test
     steps:
     - uses: actions/checkout@v3
 
@@ -28,10 +28,11 @@ jobs:
         go-version: '1.21'
 
     - name: Setup MySql
-      uses: nnhy/mysql-action@v1.0
-
-    - name: Create a database
-      run : mysql -h $MYSQL_IP -u $MYSQL_USERNAME -p $MYSQL_PASSWORD -e "CREATE $MYSQL_DB_NAME;"
+      uses: samin/mysql-action@v1
+      with:
+        mysql database: $MYSQL_DB_NAME
+        mysql user: $MYSQL_UERNAME
+        mysql password: $MYSQL_PASSWORD
 
     - name: Build
       run: go build -v ./...
