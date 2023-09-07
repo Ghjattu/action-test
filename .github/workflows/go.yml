@@ -16,7 +16,7 @@ jobs:
     env:
         MYSQL_IP: ${{ vars.MYSQL_IP }}
         MYSQL_PORT: ${{ vars.MYSQL_PORT }}
-        MYSQL_USERNAME: root
+        MYSQL_USERNAME: ${{ vars.MYSQL_USERNAME }}
         MYSQL_DB_NAME: tiktok_test
         REDIS_IP: 127.0.0.1
         REDIS_PORT: 6379
