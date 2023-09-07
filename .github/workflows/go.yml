@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
         MYSQL_IP: ${{ vars.MYSQL_IP }}
-        MYSQL_PORT: 3306
+        MYSQL_PORT: ${{ vars.MYSQL_PORT }}
         MYSQL_USERNAME: root
         MYSQL_DB_NAME: tiktok_test
         REDIS_IP: 127.0.0.1
