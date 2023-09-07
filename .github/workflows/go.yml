@@ -14,9 +14,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-        MYSQL_IP: ${{ vars.MYSQL_IP }}
-        MYSQL_PORT: ${{ vars.MYSQL_PORT }}
-        MYSQL_USERNAME: ${{ vars.MYSQL_USERNAME }}
+        OSS_BUCKET_NAME: ${{ vars.OSS_BUCKET_NAME }}
+        OSS_ENDPOINT: ${{ vars.OSS_ENDPOINT }}
+        OSS_ACCESS_KEY_ID: ${{ vars.OSS_ACCESS_KEY_ID }}
+        OSS_ACCESS_KEY_SECRET: ${{ vars.OSS_ACCESS_KEY_SECRET }}
+        MYSQL_IP: 127.0.0.1
+        MYSQL_PORT: 3306
+        MYSQL_USERNAME: root
         MYSQL_DB_NAME: tiktok_test
         REDIS_IP: 127.0.0.1
         REDIS_PORT: 6379
