@@ -13,11 +13,13 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: TEST
     env:
-        OSS_BUCKET_NAME: ${{ vars.OSS_BUCKET_NAME }}
-        OSS_ENDPOINT: ${{ vars.OSS_ENDPOINT }}
-        OSS_ACCESS_KEY_ID: ${{ vars.OSS_ACCESS_KEY_ID }}
-        OSS_ACCESS_KEY_SECRET: ${{ vars.OSS_ACCESS_KEY_SECRET }}
+        OSS_BUCKET_NAME: ${{ secrets.OSS_BUCKET_NAME }}
+        OSS_ENDPOINT: ${{ secrets.OSS_ENDPOINT }}
+        OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+        OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
         MYSQL_IP: 127.0.0.1
         MYSQL_PORT: 3306
         MYSQL_USERNAME: root
