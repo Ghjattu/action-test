@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -18,11 +17,11 @@ func InitDatabase() {
 	mysql_port := os.Getenv("MYSQL_PORT")
 	mysql_db_name := os.Getenv("MYSQL_DB_NAME")
 
-	log.Println("MYSQL_USERNAME: " + mysql_username)
-	log.Println("MYSQL_PASSWORD: " + mysql_password)
-	log.Println("MYSQL_IP: " + mysql_ip)
-	log.Println("MYSQL_PORT: " + mysql_port)
-	log.Println("MYSQL_DB_NAME: " + mysql_db_name)
+	// log.Println("MYSQL_USERNAME: " + mysql_username)
+	// log.Println("MYSQL_PASSWORD: " + mysql_password)
+	// log.Println("MYSQL_IP: " + mysql_ip)
+	// log.Println("MYSQL_PORT: " + mysql_port)
+	// log.Println("MYSQL_DB_NAME: " + mysql_db_name)
 
 	dsn := mysql_username + ":" + mysql_password +
 		"@tcp(" + mysql_ip + ":" + mysql_port + ")" + "/" + mysql_db_name +
@@ -35,5 +34,5 @@ func InitDatabase() {
 }
 
 func main() {
-	InitDatabase()
+
 }
